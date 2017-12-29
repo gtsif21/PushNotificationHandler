@@ -25,7 +25,7 @@ public class PushNotificationHandler {
     private var apnsToken: String?
     
     public typealias NewTokenHandlerArguments = (tokenData: Data?, token: String?, error: Error?)
-    private var newTokenHandler: (NewTokenHandlerArguments) -> Void = {_,_,_ in}
+    private var newTokenHandler: (NewTokenHandlerArguments) -> Void = { _ in }
     
     private func alreadySubscribedIndex(potentialSubscriber: PushNotificationSubscriber) -> Int? {
         return subscribers.index(where: { (weakSubscriber) -> Bool in
